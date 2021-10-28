@@ -1,0 +1,9 @@
+.nav-item{
+    
+    font-weight: 700;
+}
+.nav-item:hover{
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+}

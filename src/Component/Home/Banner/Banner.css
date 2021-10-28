@@ -1,0 +1,13 @@
+.bg-img{
+    background-image: url("../../../images/bg.jpg");
+    background-repeat: no-repeat;
+    
+    
+}
+.text-style{
+    font-size: 100px;
+    color: whitesmoke;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+}
