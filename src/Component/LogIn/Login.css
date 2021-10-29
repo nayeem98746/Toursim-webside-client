@@ -1,0 +1,25 @@
+.main-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-style{
+   padding: 100px;
+}
+.input-style input{
+    
+    color: whitesmoke;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid fuchsia;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.google-btn{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: lime;
+}

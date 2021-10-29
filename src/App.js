@@ -4,13 +4,15 @@ import { BrowserRouter  as Router, Switch , Route} from 'react-router-dom';
 import Home from './Component/Home/Home';
 import NotFound from './Component/NotFound/NotFound';
 import Header from './Component/Shared/Header/Header';
-import Service from './Component/Service/Service';
 import Login from './Component/LogIn/Login';
+import Services from './Component/Services/Services';
+import Authprovider from './contexts/Authprovider';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+     <Authprovider>
+     <Router>
         <Header></Header>
       <Switch>
         <Route exact path="/">
@@ -23,13 +25,14 @@ function App() {
           <Login></Login>
         </Route>
         <Route path="/service">
-          <Service></Service>
+          <Services></Services>
         </Route>
         <Route>
           <NotFound></NotFound>
         </Route>
       </Switch>
       </Router>
+     </Authprovider>
     </div>
   );
 }
