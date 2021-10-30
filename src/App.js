@@ -6,12 +6,15 @@ import NotFound from './Component/NotFound/NotFound';
 import Header from './Component/Shared/Header/Header';
 import Login from './Component/LogIn/Login';
 import Services from './Component/Services/Services';
-import Authprovider from './contexts/Authprovider';
+import AuthProvider from './context/AuthProvider';
+import Booking from './Component/Booking/Booking';
+import PrivateRoute from './Component/LogIn/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-     <Authprovider>
+     
+     <AuthProvider>
      <Router>
         <Header></Header>
       <Switch>
@@ -27,12 +30,16 @@ function App() {
         <Route path="/service">
           <Services></Services>
         </Route>
+        <PrivateRoute path="/booking/:service">
+          <Booking></Booking>
+        </PrivateRoute>
         <Route>
           <NotFound></NotFound>
         </Route>
       </Switch>
       </Router>
-     </Authprovider>
+     </AuthProvider>
+     
     </div>
   );
 }

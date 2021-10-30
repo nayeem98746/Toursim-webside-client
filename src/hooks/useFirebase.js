@@ -1,45 +1,57 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged  } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-import initializeAuthentication from "../Component/Firebase/firebase.init";
+import initializeAuthentication from "../Component/LogIn/Firebase/firebase.init";
 
 initializeAuthentication()
- 
+
 const useFirebase = () => {
-    const [users, setusers] = useState({})
-    const auth = getAuth()
-    const singInUsingGoogle = () => {
+    const [user, setUser] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
+
+    const auth = getAuth();
+
+    const [error, setError] = useState("")
+
+
+    const singInUseingGoogle = () => {
+        setIsLoading(true)
         const googleProvider = new GoogleAuthProvider();
         signInWithPopup(auth, googleProvider)
         .then(result => {
-            setusers(result.user)
+            setUser(result.user)
+            setError("")
         })
+        .finally(()=> setIsLoading(false))
     }
 
-
     useEffect( () => {
-        const unsubscribed = onAuthStateChanged(auth, user => {
-            if(user){
-                setusers(user)
+     const unsubscribed =   onAuthStateChanged(auth, user => {
+            if(user) {
+                setUser(user)
             }
             else{
-               setusers({}) 
+                setUser({})
             }
+            setIsLoading(false)
         })
         return () => unsubscribed
     } ,[])
 
-
     const logOut = () => {
+        setIsLoading(true)
         signOut(auth)
-        .then(() => {})
+        .then(()=> { })
+        .finally(()=> setIsLoading(false))
     }
 
-    return{
-        users,
-        singInUsingGoogle,
-        logOut
 
+    return{
+         user,
+         isLoading,
+        singInUseingGoogle,
+        error,
+        logOut
     }
 }
 
-export default useFirebase
+export default useFirebase;
