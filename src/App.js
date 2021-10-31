@@ -9,6 +9,13 @@ import Services from './Component/Services/Services';
 import AuthProvider from './context/AuthProvider';
 import Booking from './Component/Booking/Booking';
 import PrivateRoute from './Component/LogIn/PrivateRoute/PrivateRoute';
+import BookingInformation from './Component/BookingInformation/BookingInformation';
+import ServiceAdded from './Component/ServiceAdded/ServiceAdded';
+import MangeService from './Component/MageService/MangeService';
+import TourismImg from './Component/TourismImg/TourismImg';
+import AddImg from './Component/AddImg/AddImg';
+import TourismCars from './Component/TourismCars/TourismCars';
+import Ticket from './Component/Ticket/Ticket';
 
 function App() {
   return (
@@ -33,6 +40,28 @@ function App() {
         <PrivateRoute path="/booking/:service">
           <Booking></Booking>
         </PrivateRoute>
+        <PrivateRoute path="/bookinginformation">
+          <BookingInformation></BookingInformation>
+        </PrivateRoute>
+        <PrivateRoute path="/tourismImg">
+          <TourismImg></TourismImg>
+        </PrivateRoute>
+        <Route path="/tourismCar">
+          <TourismCars></TourismCars>
+        </Route>
+        <PrivateRoute path="/ticket/:tourismCarId">
+          <Ticket></Ticket>
+        </PrivateRoute>
+
+        <Route path="/serviceAdded">
+          <ServiceAdded></ServiceAdded>
+        </Route>
+        <Route path="/mangeServices">
+          <MangeService></MangeService>
+        </Route>
+        <Route path="/addImg">
+          <AddImg></AddImg>
+        </Route>
         <Route>
           <NotFound></NotFound>
         </Route>

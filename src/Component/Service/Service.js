@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "./Service.css"
 
 const Service = (props) => {
-    const {id, name, img, price, description}= props.service
+    const { _id, name, img, price, description}= props.service
     return (
         <div>
 
@@ -16,7 +16,10 @@ const Service = (props) => {
     <Card.Text>
       {description}
     </Card.Text>
-    <Link to={`/booking/${id}`}><Button variant="warning">Booking</Button></Link>
+    <Link to={`/booking/${_id}`}><Button variant="warning">Go to Where {name.toLowerCase()} </Button></Link>
+    <Link to="/bookinginformation">
+    <Button className="m-4">Tap to Booking  </Button>
+    </Link>
   </Card.Body>
 </Card>
 

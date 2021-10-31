@@ -6,13 +6,13 @@ const Booking = () => {
     const [details, setDetails] = useState([])
 
     useEffect(() => {
-        fetch('/ServiceData.json')
+        fetch('http://localhost:5000/services')
         .then(res => res.json())
         .then(data => setDetails(data))
         // .then(data => console.log(data))
     },[])
 
-    const product = details.find(pd => pd.id == service)
+    const product = details.find(pd => pd._id == service)
     console.log(product)
 
     return (
