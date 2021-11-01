@@ -8,6 +8,8 @@ const ImageTourist = ({img}) => {
             
             <img width="200px" src={img1} alt="" />
             <h2>{Name}</h2>
+            <img src={img1} alt="" />
+            <img src={img1} alt="" />
             <Link to={`/allimg/${id}`}>
             <button style={{
                 backgroundColor:"burlywood",
