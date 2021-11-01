@@ -1,11 +1,10 @@
-.img-container{
+.image-card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap:20px;
-    padding-left: 150px;
+    grid-gap:25px
 }
 @media only screen and (max-width:688px) {
-    .img-container{
+    .image-card{
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
     }
@@ -14,7 +13,7 @@
 @media only screen  and
  (min-width:689px) and
  (max-width:991px){
-    .img-container{
+    .image-card{
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
     }

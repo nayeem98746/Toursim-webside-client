@@ -12,10 +12,15 @@ import PrivateRoute from './Component/LogIn/PrivateRoute/PrivateRoute';
 import BookingInformation from './Component/BookingInformation/BookingInformation';
 import ServiceAdded from './Component/ServiceAdded/ServiceAdded';
 import MangeService from './Component/MageService/MangeService';
-import TourismImg from './Component/TourismImg/TourismImg';
 import AddImg from './Component/AddImg/AddImg';
 import TourismCars from './Component/TourismCars/TourismCars';
 import Ticket from './Component/Ticket/Ticket';
+import ImagesTourist from './Component/ImagesTourist/ImagesTourist';
+import Allimg from './Component/Allimg/Allimg';
+import ImagesAdded from './Component/ImagesAdded/ImagesAdded';
+import AddvehiclesData from './Component/ImagesAdded/AddvehiclesData/AddvehiclesData';
+import ShowUser from './Component/ShowUser/ShowUser';
+import UpdateUser from './Component/UpdateUser/UpdateUser';
 
 function App() {
   return (
@@ -37,19 +42,26 @@ function App() {
         <Route path="/service">
           <Services></Services>
         </Route>
+        <Route path="/imagesTourist">
+          <ImagesTourist></ImagesTourist>
+        </Route>
+        <PrivateRoute path="/allimg/:img">
+          <Allimg></Allimg>
+        </PrivateRoute>
+        <Route path="/imagesAdded">
+          <ImagesAdded></ImagesAdded>
+        </Route>
         <PrivateRoute path="/booking/:service">
           <Booking></Booking>
         </PrivateRoute>
         <PrivateRoute path="/bookinginformation">
           <BookingInformation></BookingInformation>
         </PrivateRoute>
-        <PrivateRoute path="/tourismImg">
-          <TourismImg></TourismImg>
-        </PrivateRoute>
+      
         <Route path="/tourismCar">
           <TourismCars></TourismCars>
         </Route>
-        <PrivateRoute path="/ticket/:tourismCarId">
+        <PrivateRoute path="/ticket/:vehicle">
           <Ticket></Ticket>
         </PrivateRoute>
 
@@ -59,9 +71,19 @@ function App() {
         <Route path="/mangeServices">
           <MangeService></MangeService>
         </Route>
-        <Route path="/addImg">
+        {/* <Route path="/addImg">
           <AddImg></AddImg>
+        </Route> */}
+        <Route path="/addvehiclesdata">
+          <AddvehiclesData></AddvehiclesData>
         </Route>
+        <Route path="/showUser/update/:id">
+          <UpdateUser></UpdateUser>
+        </Route>
+        <Route path="/showUser">
+          <ShowUser></ShowUser>
+        </Route>
+        
         <Route>
           <NotFound></NotFound>
         </Route>

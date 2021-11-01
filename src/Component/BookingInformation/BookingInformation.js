@@ -1,52 +1,48 @@
-import React, { useEffect, useRef,  } from 'react';
-import { useForm } from 'react-hook-form';
-import useAuth from '../../hooks/useAuth';
-// import { clearTheCart, getStoredCart } from '../../utilities/fakedb';
-
-
-import "./BookingInformation.css"
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const BookingInformation = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { user } = useAuth()
-    const onSubmit = data => {
-        // const savedCart = getStoredCart()
-        
+    const nameRef = useRef()
+    const emailRef = useRef()
+    const addressRef = useRef()
+    const phoneRef = useRef()
+    const handleAddUser = e => {
+        const name = nameRef.current.value
+        const email = emailRef.current.value
+        const address = addressRef.current.value
+        const phone = phoneRef.current.value
 
-
-        fetch('', {
+        const newUser = {name, email, address, phone}
+        fetch('http://localhost:5000/users', {
             method:'POST',
             headers:{
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify(data)
-        } , [])
+            body: JSON.stringify(newUser)
+        
+        })
         .then(res => res.json())
-        .then(result => {
-            if(result.insertedId){
-                // clearTheCart()
-                reset()
+        .then(data => {
+            if(data.insertedId){
+                alert('successfuly')
+                
             }
         })
+
+        e.preventDefault()
     }
-
-    
     return (
-        <div className="form-start">
-             <form className="" onSubmit={handleSubmit(onSubmit)}>
+        <div>
+            <h2>this is booking users</h2>
+            <form onSubmit={handleAddUser}>
+                <input type="text" ref={nameRef} placeholder="Name" /><br /><br />
+                <input type="text" ref={emailRef} placeholder="email" /><br /><br />
+                <textarea type="text" ref={addressRef} placeholder="address" /><br /><br />
+                <input type="number" ref={phoneRef} placeholder="Number" /><br /><br />
 
-                <input defaultValue={user.displayName} {...register("name")} />
-
-                <input defaultValue={user.email} {...register("email", { required: true })} />
-                {errors.email && <span className="error">This field is required</span>}
-                <input placeholder="Address" defaultValue="" {...register("address")} />
-                <input placeholder="City" defaultValue="" {...register("city")} />
-                <input placeholder="phone number" defaultValue="" {...register("phone")} />
-
-                <input type="submit" />
-                <button>delete</button>
+                <input type="submit" value="Add" /><br /><br />
+                <Link to="/showUser"><button> show User </button></Link>
             </form>
-
         </div>
     );
 };

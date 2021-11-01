@@ -7,9 +7,9 @@ const TourismCars = () => {
 
 
     useEffect( () => {
-        fetch('./vehicles.json')
+        fetch('http://localhost:5000/vehicles')
         .then(res => res.json())
-        .then(data => setVehicles(data))
+        .then(data => setVehicles (data))
     } ,[])
     return (
         <div>
