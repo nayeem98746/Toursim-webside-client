@@ -5,7 +5,7 @@ const Ticket = () => {
     const [details, setDetails]= useState([])
     const { vehicle} = useParams()
     useEffect( () => {
-        fetch(`http://localhost:5000/vehicles/${vehicle}`)
+        fetch(`https://limitless-reef-20591.herokuapp.com/vehicles/${vehicle}`)
         .then(res => res.json())
         .then(data => setDetails(data))
         // .then(data => console.log(data))

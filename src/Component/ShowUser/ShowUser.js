@@ -6,7 +6,7 @@ const ShowUser = () => {
 
 
     useEffect( ()=> {
-        fetch('http://localhost:5000/users')
+        fetch('https://limitless-reef-20591.herokuapp.com/users')
         .then(res => res.json())
         .then(data => setusers(data))
     } ,[])
@@ -14,7 +14,7 @@ const ShowUser = () => {
     const handleDelete = id =>{
       const warning = window.confirm('are you want delete user')
       if(warning){
-        const url = `http://localhost:5000/users/${id}`
+        const url = `https://limitless-reef-20591.herokuapp.com/users/${id}`
         fetch( url, {
             method: 'DELETE'
 

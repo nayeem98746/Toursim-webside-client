@@ -7,7 +7,7 @@ const TourismCars = () => {
 
 
     useEffect( () => {
-        fetch('http://localhost:5000/vehicles')
+        fetch('https://limitless-reef-20591.herokuapp.com/vehicles')
         .then(res => res.json())
         .then(data => setVehicles (data))
     } ,[])

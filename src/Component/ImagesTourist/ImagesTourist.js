@@ -7,7 +7,7 @@ const ImagesTourist = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/Images')
+        fetch('https://limitless-reef-20591.herokuapp.com/Images')
         .then(res => res.json())
         .then(data => setImages(data))
     },[])

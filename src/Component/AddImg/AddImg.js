@@ -8,7 +8,7 @@ const AddImg = () => {
     
         console.log(data)
         
-        axios.post('http://localhost:5000/images')
+        axios.post('https://limitless-reef-20591.herokuapp.com/images')
         .then(res => {
             console.log(res)
           if(res.data.insertedId){

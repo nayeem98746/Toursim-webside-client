@@ -13,7 +13,7 @@ const BookingInformation = () => {
         const phone = phoneRef.current.value
 
         const newUser = {name, email, address, phone}
-        fetch('http://localhost:5000/users', {
+        fetch('https://limitless-reef-20591.herokuapp.com/users', {
             method:'POST',
             headers:{
                 'content-type' : 'application/json'

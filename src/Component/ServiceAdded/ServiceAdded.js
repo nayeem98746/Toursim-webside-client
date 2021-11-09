@@ -10,7 +10,7 @@ const ServiceAdded = () => {
     
     console.log(data)
     
-    axios.post('http://localhost:5000/services', data)
+    axios.post('https://limitless-reef-20591.herokuapp.com/services', data)
     .then(res => {
       if(res.data.insertedId){
         alert('Your data is successed')

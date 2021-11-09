@@ -7,7 +7,7 @@ const AddvehiclesData = () => {
     const { register, handleSubmit,reset } = useForm();
   const onSubmit = data => {
       console.log(data)
-      axios.post('http://localhost:5000/vehicles', data)
+      axios.post('https://limitless-reef-20591.herokuapp.com/vehicles', data)
       .then(res => {
           if(res.data.insertedId){
               alert('added successfully')

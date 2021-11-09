@@ -6,7 +6,7 @@ const UpdateUser = () => {
     const {id} = useParams()
 
     useEffect ( () => {
-        const url = `http://localhost:5000/users/${id}`
+        const url = `https://limitless-reef-20591.herokuapp.com/users/${id}`
         fetch(url)
         .then(res => res.json())
         .then(data => setUser(data))
