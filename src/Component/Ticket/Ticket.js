@@ -11,7 +11,6 @@ const Ticket = () => {
         // .then(data => console.log(data))
     } ,[vehicle])
     // const product = details?.find(pd => pd._id == vehicle)
-    // console.log(product)
     return (
         <div>
              <p>{vehicle}</p>   
