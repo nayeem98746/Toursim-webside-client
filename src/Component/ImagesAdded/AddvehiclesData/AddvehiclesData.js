@@ -19,7 +19,7 @@ const AddvehiclesData = () => {
 };
     return (
         <div>
-            <h2>add vehicles data </h2>
+            <h2>add vehicles data! </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("Name")} placeholder="Name" /><br /><br />
 
