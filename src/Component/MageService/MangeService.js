@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const MangeService = () => {
     const [services, setServices] = useState([])
- 
+ //
     useEffect( () => {
         fetch('https://limitless-reef-20591.herokuapp.com/services')
         .then(res => res.json())
