@@ -13,7 +13,7 @@ const UpdateUser = () => {
     } ,[])
     return (
         <div>
-            <h2>this is update user {user.name}</h2>
+            <h2>this is update user and remove {user.name}</h2>
             <p>{id}</p>
         </div>
     );
